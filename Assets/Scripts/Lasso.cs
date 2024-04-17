@@ -1,22 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class Lasso : MonoBehaviour
 {
-    public GameObject Object_Lasso;
-    public GameObject Player;
+    public GameObject lasso;
+    public GameObject player;
 
-    public Rigidbody2D Lasso_Rb;
+    public Rigidbody2D rb;
 
     private Vector3 Throw_Vector;
+    private Vector3 VelocityZero = Vector3.zero;
+
+    private bool Retrieve = false;
+    [SerializeField] private GameObject[] Captured = new GameObject[2];
     // Start is called before the first frame update
 
     private void Awake()
     {
         if(this.GetComponent<Rigidbody2D>() == null)
-            Lasso_Rb = this.GetComponent<Rigidbody2D>();
+            rb = this.GetComponent<Rigidbody2D>();
 
     }
     void Start()
@@ -26,12 +31,12 @@ public class Lasso : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Object_Lasso.activeSelf)
-            Object_Lasso.transform.Rotate(2, 0, 0);
+        if(lasso.activeSelf)
+            lasso.transform.Rotate(2, 0, 0);
     }
     private void OnMouseDown()
     {
-        Object_Lasso.SetActive(true);
+        lasso.SetActive(true);
         CalculateThrow();
     }
     private void OnMouseUp()
@@ -41,6 +46,26 @@ public class Lasso : MonoBehaviour
     private void OnMouseDrag()
     {
         CalculateThrow();
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        switch (collision.collider.tag)
+        {
+            case "Creature":
+                lasso.transform.position = player.transform.position;
+                if (collision.gameObject != Captured[0])
+                    Captured[0] = collision.gameObject;
+                else
+                    Captured[1] = collision.gameObject;
+                break;
+            case "Ground":
+                lasso.transform.position = player.transform.position;
+                break;
+            case "Player":
+                lasso.SetActive(false);
+                break;
+
+        }
     }
 
     void CalculateThrow()
@@ -53,22 +78,20 @@ public class Lasso : MonoBehaviour
 
     void Throw(Vector3 ThrowVector)
     {
-        Lasso_Rb.AddForce(ThrowVector);
+        rb.AddForce(ThrowVector);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void MoveBack()
     {
-        switch(collision.collider.tag)
+        if (Vector3.Distance(lasso.transform.position, player.transform.position) > 0 && Retrieve)
         {
-            case "Creature":
-                Object_Lasso.transform.position = Player.transform.position;
-                Object_Lasso.SetActive(false);
-                break;
-            case "Ground":
-                Object_Lasso.transform.position = Player.transform.position;
-                Object_Lasso.SetActive(false); 
-                break;
-                
+            lasso.transform.position = Vector3.SmoothDamp(lasso.transform.position, player.transform.position, ref VelocityZero, Time.deltaTime * 0.1f);
+        }
+
+        if(Retrieve && Vector3.Distance(lasso.transform.position, player.transform.position) == 0)
+        {
+            Retrieve = false;
         }
     }
+
 }

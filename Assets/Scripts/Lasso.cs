@@ -67,7 +67,8 @@ public class Lasso : MonoBehaviour
 
         }
     }
-
+    // code be clean - j 
+    
     void CalculateThrow()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

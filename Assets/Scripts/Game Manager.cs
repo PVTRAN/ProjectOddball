@@ -1,19 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager instance;
     public GameState State;
 
     public static event Action<GameState> OnGameStateChanged;
 
     public GameObject[] Captured = new GameObject[2];
+
+    public GameObject Player;
     void Awake()
     {
-        Instance = this;
-        DontDestroyOnLoad(this.GameObject);
+        if(instance)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+
+        DontDestroyOnLoad(this);
 
     }
     // Start is called before the first frame update
@@ -51,35 +62,19 @@ public class GameManager : MonoBehaviour
 
     public void updateCapturedCreature(GameObject gObject)
     {
-        if (Captured[0] != null)
+        if (Captured[0] == null)
         {
             Captured[0] = gObject;
         }
-        else if(Captured[1] != null)
+        else if(Captured[1] == null)
         {
             Captured[1] = gObject;
         }
-
-
     }
 
-    public GameObject takeOutCaptured(GameObject gObject)
+    public GameObject takeOutCaptured(int CapturedIndex)
     {
-        GameObject TakenOut;
-        switch (gObject)
-        {
-            case Captured[0]:
-                TakenOut = Captured[0]
-                Captured[0] = NULL;
-                break;
-            case Captured[1]:
-                TakenOut = Captured[1]
-                Captured[1] = NULL;
-                break;
-            default:
-                break;
-        }
-
+        return Captured[CapturedIndex];
     }
 }
 

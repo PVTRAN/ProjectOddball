@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7393924695692758818}
   - component: {fileID: 7060743061977802424}
   - component: {fileID: 5628961111788939504}
+  - component: {fileID: 6123575080365666301}
   - component: {fileID: 4986218397497601358}
-  - component: {fileID: 6759475387714430252}
   m_Layer: 0
   m_Name: 'Lasso '
   m_TagString: Untagged
@@ -122,6 +122,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &6123575080365666301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4905679777823864125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61613b1a279001740addf82d905b6b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pLasso: {fileID: 0}
 --- !u!50 &4986218397497601358
 Rigidbody2D:
   serializedVersion: 4
@@ -149,18 +162,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6759475387714430252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4905679777823864125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8170baf53e84b6d4ab47ae0e9aa559fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Object_Lasso: {fileID: 4905679777823864125}
-  Player: {fileID: 0}
-  Lasso_Rb: {fileID: 4986218397497601358}

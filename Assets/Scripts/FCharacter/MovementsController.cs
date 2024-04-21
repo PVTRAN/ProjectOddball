@@ -7,7 +7,8 @@ public class MovementsController : MonoBehaviour
     public float speed = 5.0f;
     public float jumpForce = 7.0f;
     
-    public float health; 
+    //Movement script does not need to be here
+    //public float health; 
     private bool isGrounded = true;
     
     private Rigidbody2D rb;
@@ -20,7 +21,7 @@ public class MovementsController : MonoBehaviour
     {
         //initialize the component
         rb = GetComponent<Rigidbody2D>();
-        health = 3; 
+        //health = 3; 
     }
     
     void Update()

@@ -16,6 +16,7 @@ public class Health : MonoBehaviour
         }
     }
     
+    //This is not implemented yet
     public void Heal(float healAmount)
     {
         health += healAmount;
@@ -23,10 +24,10 @@ public class Health : MonoBehaviour
         // Unity method that caps the health at 100 
         health = Mathf.Min(health, 100f); 
     }
-    
     private void Die()
     {
         // We gettin' jank boys. Open to suggestions
+        //
         gameObject.SetActive(false);
     }
 }

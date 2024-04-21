@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +8,28 @@ public class BoxDamageTrigger : MonoBehaviour
     public float damageAmount = 10f;
     
     //CustomComponent MyCompnent 
-
-    private void OnTriggerEnter2D(Collider2D other)
+    
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        Health health = other.GetComponent<Health>();
-        if (health != null)
+        
+        // moved "other.CompareTag" 
+        
+        //If the player dude collides 
+        if (other.gameObject.CompareTag("Player"))
         {
-            health.TakeDamage(damageAmount);
+            //getting my health component
+            //this is the format 
+            Health health = other.gameObject.GetComponent<Health>();
+            if (health != null)
+            {
+                health.TakeDamage(damageAmount);
+                Debug.Log("hit"); 
+            }
         }
     }
+
+   
 }
+
+
+    

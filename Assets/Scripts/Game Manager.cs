@@ -7,13 +7,13 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameState State;
 
-    public static event Action<GameState> OnGameStateChanged;
+   // public static event Action<GameState> OnGameStateChanged;
 
     public GameObject[] Captured = new GameObject[2];
     void Awake()
     {
         Instance = this;
-        DontDestroyOnLoad(this.GameObject);
+      //  DontDestroyOnLoad(this.GameObject);
 
     }
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     /************************************************************************************/
 
-    public void UpdateGameState(GameState newState)
+    /*public void UpdateGameState(GameState newState)
     {
         State = newState;
 
@@ -44,10 +44,10 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.DeathState:
                 break;
-            default:
+            default: 
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         } 
-    }
+    }*/
 
     public void updateCapturedCreature(GameObject gObject)
     {
@@ -63,12 +63,12 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public GameObject takeOutCaptured(GameObject gObject)
+    /*public GameObject takeOutCaptured(GameObject gObject)
     {
         GameObject TakenOut;
         switch (gObject)
         {
-            case Captured[0]:
+            /*case Captured[0]:
                 TakenOut = Captured[0]
                 Captured[0] = NULL;
                 break;
@@ -77,10 +77,10 @@ public class GameManager : MonoBehaviour
                 Captured[1] = NULL;
                 break;
             default:
-                break;
+                break;#1#
         }
 
-    }
+    }*/
 }
 
 public enum GameState

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Lasso : MonoBehaviour
 {
-    public GameObject lasso;
+    public GameObject objLasso;
     public GameObject player;
 
     public Rigidbody2D rb;
@@ -31,12 +31,12 @@ public class Lasso : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(lasso.activeSelf)
-            lasso.transform.Rotate(2, 0, 0);
+        if(objLasso.activeSelf)
+            objLasso.transform.Rotate(2, 0, 0);
     }
     private void OnMouseDown()
     {
-        lasso.SetActive(true);
+        objLasso.SetActive(true);
         CalculateThrow();
     }
     private void OnMouseUp()
@@ -52,17 +52,17 @@ public class Lasso : MonoBehaviour
         switch (collision.collider.tag)
         {
             case "Creature":
-                lasso.transform.position = player.transform.position;
+                objLasso.transform.position = player.transform.position;
                 if (collision.gameObject != Captured[0])
                     Captured[0] = collision.gameObject;
                 else
                     Captured[1] = collision.gameObject;
                 break;
             case "Ground":
-                lasso.transform.position = player.transform.position;
+                Retrieve = true;
                 break;
             case "Player":
-                lasso.SetActive(false);
+                objLasso.SetActive(false);
                 break;
 
         }
@@ -84,12 +84,12 @@ public class Lasso : MonoBehaviour
 
     void MoveBack()
     {
-        if (Vector3.Distance(lasso.transform.position, player.transform.position) > 0 && Retrieve)
+        if (Vector3.Distance(objLasso.transform.position, player.transform.position) > 0 && Retrieve)
         {
-            lasso.transform.position = Vector3.SmoothDamp(lasso.transform.position, player.transform.position, ref VelocityZero, Time.deltaTime * 0.1f);
+            objLasso.transform.position = Vector3.SmoothDamp(objLasso.transform.position, player.transform.position, ref VelocityZero, Time.deltaTime * 0.1f);
         }
 
-        if(Retrieve && Vector3.Distance(lasso.transform.position, player.transform.position) == 0)
+        if(Retrieve && Vector3.Distance(objLasso.transform.position, player.transform.position) == 0)
         {
             Retrieve = false;
         }

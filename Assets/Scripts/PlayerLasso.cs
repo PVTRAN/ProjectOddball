@@ -72,7 +72,7 @@ public class PlayerLasso : MonoBehaviour
 
     void Throw(Vector3 ThrowVector)
     {
-        rb.AddForce(ThrowVector * 10);
+        rb.AddForce(ThrowVector * 5);
     }
 
     void MoveBack()

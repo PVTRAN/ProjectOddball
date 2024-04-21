@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameState State;
 
-    public static event Action<GameState> OnGameStateChanged;
+   // public static event Action<GameState> OnGameStateChanged;
 
     public GameObject[] Captured = new GameObject[2];
 
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
     /************************************************************************************/
 
-    public void UpdateGameState(GameState newState)
+    /*public void UpdateGameState(GameState newState)
     {
         State = newState;
 
@@ -55,10 +55,10 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.DeathState:
                 break;
-            default:
+            default: 
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         } 
-    }
+    }*/
 
     public void updateCapturedCreature(GameObject gObject)
     {

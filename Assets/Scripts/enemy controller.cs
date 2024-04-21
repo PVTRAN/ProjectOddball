@@ -1,58 +1,176 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class enemycontroller : MonoBehaviour
 {
-    public GameObject PointA;
-    public GameObject PointB;
-    private Rigidbody2D Rb;
-    private Transform CurrentPos;
-    public float speed;
+    //move speed
+    [SerializeField] private float Speed;
+
+    //patrol
+
+
+    [SerializeField] private float Dis;
+    private bool Mr = true;
+    [SerializeField] private Transform Gd;
+
+    //Chase
+    [SerializeField] private Transform Player;
+    [SerializeField] private float Dr;
+    [SerializeField] private float Sd;
+    [SerializeField] private Transform Castpoint;
+
+
    // private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        Rb = GetComponent<Rigidbody2D>();
-        CurrentPos = PointB.transform;
+ 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 pos = CurrentPos.position - transform.position;
-        if(CurrentPos == PointB.transform)
+        if (canseeplayer(Dr) == false)
         {
-            Rb.velocity = new Vector2(speed, 0);
+            patrol();
         }
         else
         {
-            Rb.velocity = new Vector2(-speed, 0);
+            Chase();
+        }
+        
+    }
+    private void patrol()
+    {
+        if (Mr == true)
+        {
+            transform.Translate(Vector2.right * Speed * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(Vector2.left * Speed * Time.deltaTime);
         }
 
-        if(Vector2.Distance(transform.position, CurrentPos.position) < 0.5f && CurrentPos == PointB.transform)
+        RaycastHit2D GdInfo = Physics2D.Raycast(Gd.position, Vector2.down, Dis);
+
+        if (GdInfo.collider == false)
         {
-            flip();
-            CurrentPos = PointA.transform;
-        }
-        if (Vector2.Distance(transform.position, CurrentPos.position) < 0.5f && CurrentPos == PointA.transform)
-        {
-            flip();
-            CurrentPos = PointB.transform;
+            if (Mr == true)
+            {
+                Mr = false;
+                flip();
+            }
+            else
+            {
+                Mr = true;
+                flip();
+            }
         }
     }
 
+    private void Chase()
+    {
+        RaycastHit2D GdInfo = Physics2D.Raycast(Gd.position, Vector2.down, Dis);
+        if (transform.position.x < Player.position.x)
+        {
+            float temp = transform.position.x - Player.position.x;
+
+
+            if (Mr == false)
+            { 
+                flip();
+                Mr = true;
+            }
+            if (GdInfo.collider == true)
+            {
+                if (temp < Sd)
+                {
+                    transform.Translate(Vector2.right * 0 * Time.deltaTime);
+                }
+                else
+                {
+                    transform.Translate(Vector2.right * Speed * Time.deltaTime);
+                }
+                
+            }
+            else
+            {
+                transform.Translate(Vector2.right * 0 * Time.deltaTime);
+            }
+            
+
+
+
+
+        }
+        else if (transform.position.x > Player.position.x)
+        {
+
+            float temp = transform.position.x - Player.position.x;
+            if (Mr == true)
+            {
+                flip();
+                Mr = false;
+            }
+
+            if (GdInfo.collider == true)
+            {
+                if (temp < Sd)
+                {
+                    transform.Translate(Vector2.left * 0 * Time.deltaTime);
+                }
+                else
+                {
+                    transform.Translate(Vector2.left * Speed * Time.deltaTime);
+                }
+               
+            }
+            else
+            {
+                transform.Translate(Vector2.left * 0 * Time.deltaTime);
+            }
+           
+
+
+
+        }
+    }
     private void flip()
     {
-        Vector3 localscale = transform.localScale;
-        localscale.y *= -1;
-        transform.localScale = localscale;
+        Vector3 eulerAngles = transform.eulerAngles;
+        eulerAngles.y *= -1;
+        transform.eulerAngles = eulerAngles;
 
     }
-    private void OnDrawGizmos()
+
+    private bool canseeplayer(float distance)
     {
-        Gizmos.DrawWireSphere(PointA.transform.position, 0.5f);
-        Gizmos.DrawWireSphere(PointB.transform.position, 0.5f);
-        Gizmos.DrawLine(PointA.transform.position, PointB.transform.position);
+        float castdis = distance;
+        bool temp = false;
+        if (Mr == false)
+        {
+            castdis *= -1;
+        }
+        
+
+        Vector2 endpos = Castpoint.position +Vector3.right * castdis;
+        RaycastHit2D hit = Physics2D.Linecast(Castpoint.position, endpos, 1 << LayerMask.NameToLayer("Action"));
+        if(hit.collider != null)
+        {
+            if (hit.collider.gameObject.CompareTag("Player"))
+            {
+                temp = true;
+            }
+            else
+            {
+                temp = false;
+            }   
+        }
+        return temp;
     }
+
 }

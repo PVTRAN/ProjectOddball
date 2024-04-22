@@ -42,17 +42,25 @@ public class enemycontroller : MonoBehaviour
         {
             Chase();
         }
+
+      
         
     }
     private void patrol()
     {
         if (Mr == true)
         {
-            transform.Translate(Vector2.right * Speed * Time.deltaTime);
+            Vector3 Move = new Vector3(1,0, 0);
+            //transform.Translate(Move * Speed * Time.deltaTime);
+
+            transform.position += Move * Speed* Time.deltaTime;
+
         }
         else
         {
-            transform.Translate(Vector2.left * Speed * Time.deltaTime);
+            Vector3 Move = new Vector3(-1, 0, 0);
+            //transform.Translate(Vector2.left * Speed * Time.deltaTime);
+            transform.position += Move * Speed * Time.deltaTime;
         }
 
         RaycastHit2D GdInfo = Physics2D.Raycast(Gd.position, Vector2.down, Dis);
@@ -70,6 +78,7 @@ public class enemycontroller : MonoBehaviour
                 flip();
             }
         }
+
     }
 
     private void Chase()
@@ -93,7 +102,8 @@ public class enemycontroller : MonoBehaviour
                 }
                 else
                 {
-                    transform.Translate(Vector2.right * Speed * Time.deltaTime);
+                    Vector3 Move = new Vector3(1, 0, 0);
+                    transform.position += Move * Speed * Time.deltaTime;
                 }
                 
             }
@@ -125,7 +135,8 @@ public class enemycontroller : MonoBehaviour
                 }
                 else
                 {
-                    transform.Translate(Vector2.left * Speed * Time.deltaTime);
+                    Vector3 Move = new Vector3(-1, 0, 0);
+                    transform.position += Move * Speed * Time.deltaTime;
                 }
                
             }

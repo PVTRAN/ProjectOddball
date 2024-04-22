@@ -84,6 +84,8 @@ public class PlayerLasso : MonoBehaviour
 
         if(Retrieve && Vector3.Distance(objLasso.transform.position, player.transform.position) <= 0.25)
         {
+            Vector3 forward = new Vector3(1,0,0);
+            objLasso.transform.position += forward;
             Retrieve = false;
             objLasso.SetActive(false);
         }

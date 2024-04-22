@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameState State;
 
-   // public static event Action<GameState> OnGameStateChanged;
+    //public static event Action<GameState> OnGameStateChanged;
 
     public GameObject[] Captured = new GameObject[2];
 
     public GameObject Player;
+
+    public PauseMenu PauseMenuScript;
     void Awake()
     {
         if(instance)
@@ -36,12 +38,19 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(PauseMenuScript.pauseMenu.activeSelf)
+                PauseMenuScript.UnPause();
+            else
+                PauseMenuScript.Pause();
+        }
         
     }
 
     /************************************************************************************/
 
-    /*public void UpdateGameState(GameState newState)
+    public void UpdateGameState(GameState newState)
     {
         State = newState;
 
@@ -55,10 +64,11 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.DeathState:
                 break;
-            default: 
-                throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
+            default:
+                //throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
+                break;
         } 
-    }*/
+    }
 
     public void updateCapturedCreature(GameObject gObject)
     {

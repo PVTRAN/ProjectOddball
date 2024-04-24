@@ -11,7 +11,7 @@ public class PlayerLasso : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject player;
 
-    private Vector3 Throw_Vector;
+    private Vector2 Throw_Vector;
     private Vector3 VelocityZero = Vector3.zero;
 
     public bool Retrieve { get; set; }
@@ -43,6 +43,12 @@ public class PlayerLasso : MonoBehaviour
             MoveBack();
         }
 
+        if(Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Debug.Log("Mouse Location" + Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            Debug.Log("Player Location" + this.transform.position);
+        }
+
     }
 
     /*****************************************/
@@ -64,6 +70,7 @@ public class PlayerLasso : MonoBehaviour
     void CalculateThrow()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;
         Vector2 Distance = mousePos - this.transform.position;
 
         Throw_Vector = -Distance.normalized * 100;
@@ -79,12 +86,12 @@ public class PlayerLasso : MonoBehaviour
     {
         if (Vector3.Distance(objLasso.transform.position, player.transform.position) > 0 && Retrieve)
         {
-            objLasso.transform.position = Vector3.SmoothDamp(objLasso.transform.position, player.transform.position, ref VelocityZero, Time.deltaTime * 0.01f);
+            objLasso.transform.position = Vector3.SmoothDamp(objLasso.transform.position, player.transform.position, ref VelocityZero, Time.deltaTime * 0.001f);
         }
 
         if(Retrieve && Vector3.Distance(objLasso.transform.position, player.transform.position) <= 0.25)
         {
-            Vector3 forward = new Vector3(1,0,0);
+            Vector3 forward = new Vector3(2,0,0);
             objLasso.transform.position += forward;
             Retrieve = false;
             objLasso.SetActive(false);

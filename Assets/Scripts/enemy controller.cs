@@ -12,7 +12,6 @@ public class enemycontroller : MonoBehaviour
 
     //patrol
 
-
     [SerializeField] private float Dis;
     private bool Mr = true;
     [SerializeField] private Transform Gd;
@@ -22,6 +21,7 @@ public class enemycontroller : MonoBehaviour
     [SerializeField] private float Dr;
     [SerializeField] private float Sd;
     [SerializeField] private Transform Castpoint;
+    [SerializeField] private ParticleSystem Breath;
 
 
    // private Animator anim;
@@ -53,7 +53,7 @@ public class enemycontroller : MonoBehaviour
         if (Mr == true)
         {
             Vector3 Move = new Vector3(1,0, 0);
-            transform.position += Move * Speed* Time.deltaTime;
+            transform.position += Move * Speed * Time.deltaTime;
 
         }
         else
@@ -67,7 +67,7 @@ public class enemycontroller : MonoBehaviour
 
         //detects wall beteween 2 points
         Vector2 endpos = Gd.position + Vector3.right;
-        RaycastHit2D hit = Physics2D.Linecast(Castpoint.position, endpos, 1 << LayerMask.NameToLayer("Action"));
+        RaycastHit2D hit = Physics2D.Linecast(Gd.position, endpos, 1 << LayerMask.NameToLayer("Action"));
 
         // filps if there is a wall (ground) or if their is no floor (ground)
         if (GdInfo.collider == false || hit.collider.gameObject.CompareTag("Ground"))
@@ -128,11 +128,13 @@ public class enemycontroller : MonoBehaviour
                 if (dis <= Sd)
                 {
                     transform.position += Move * 0 * Time.deltaTime;
+                    Breath.gameObject.SetActive(true);
                 }
                 else
                 {
                     
                     transform.position += Move * Speed * Time.deltaTime;
+                    Breath.gameObject.SetActive(false);
                 }
                 
             }

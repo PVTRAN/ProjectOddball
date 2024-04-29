@@ -38,29 +38,21 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(PauseMenuScript.pauseMenu.activeSelf)
-                PauseMenuScript.UnPause();
-            else
-                PauseMenuScript.Pause();
-        }
-        
-    }
-
-    /************************************************************************************/
-
-    public void UpdateGameState(GameState newState)
-    {
-        State = newState;
-
-        switch(newState)
+        switch(State)
         {
             case GameState.MenuState:
                 break;
             case GameState.PlayState:
+                 if(Input.GetKeyDown(KeyCode.Escape))
+                 {
+                    PauseMenuScript.Pause();
+                 }
                 break;
             case GameState.PauseState:
+                if(Input.GetKeyDown(KeyCode.Escape))
+                {
+                    PauseMenuScript.UnPause();
+                }
                 break;
             case GameState.DeathState:
                 break;
@@ -68,6 +60,14 @@ public class GameManager : MonoBehaviour
                 //throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
                 break;
         } 
+    }
+    
+
+    /************************************************************************************/
+
+    public void UpdateGameState(GameState newState)
+    {
+        State = newState;
     }
 
     public void updateCapturedCreature(GameObject gObject)

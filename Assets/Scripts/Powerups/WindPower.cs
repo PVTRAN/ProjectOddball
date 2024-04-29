@@ -16,8 +16,10 @@ public class WindPower : MonoBehaviour
                 {
                     Debug.Log("Jump activated");
                     movementsController.ActivateJumpBoost(jumpBoost,duration);
-                    Destroy(gameObject); 
+                    //Destroy(gameObject); 
                 }
             }
         }
 }
+
+

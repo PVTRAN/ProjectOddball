@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WindPower : MonoBehaviour
 {
+    // Pain, checkout my lasso
         public float jumpBoost = 20f;
         public float duration = 10f;
 

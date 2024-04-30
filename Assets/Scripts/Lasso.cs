@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Lasso : MonoBehaviour
@@ -9,10 +10,9 @@ public class Lasso : MonoBehaviour
     public LineRenderer lr;
     private Transform playerTransform;
 
-    float timerTick = 0.0f;
+    public float timerTick = 0.0f;
 
     private Vector2 Throw_Vector;
-    private Vector3 VelocityZero = Vector3.zero;
 
     // Start is called before the first frame update
 
@@ -43,23 +43,41 @@ public class Lasso : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        if(Input.GetMouseButton(0))
+        {
+            CalculateThrowVector();
+            EnableDirectionLine();
+        }
+        if(Input.GetMouseButtonUp(0))
+        {
+            Throw();
+            DisableDirectionLine();
+        }
+    }
+
       /*****************************************/
-    private void OnMouseDown()
-    {
-        CalculateThrowVector();
-        EnableDirectionLine();
-    }
-    private void OnMouseDrag()
-    {
-        CalculateThrowVector();
-        EnableDirectionLine();
-    }
+    //private void OnMouseDown()
+    //{
+    //    CalculateThrowVector();
+    //    EnableDirectionLine();
+    //}
+    //private void OnMouseDrag()
+    //{
+    //    CalculateThrowVector();
+    //    EnableDirectionLine();
+    //}
+    //private void OnMouseUp()
+    //{
+    //    Throw();
+    //    DisableDirectionLine();
+    //}
     /************************************/
 
     void CalculateThrowVector()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
         Vector2 Distance = mousePos - this.transform.position;
 
         Throw_Vector = Distance.normalized * 100;

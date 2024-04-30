@@ -12,6 +12,7 @@ public class enemycontroller : MonoBehaviour
 
     //patrol
 
+
     [SerializeField] private float Dis;
     private bool Mr = true;
     [SerializeField] private Transform Gd;
@@ -21,7 +22,6 @@ public class enemycontroller : MonoBehaviour
     [SerializeField] private float Dr;
     [SerializeField] private float Sd;
     [SerializeField] private Transform Castpoint;
-    [SerializeField] private ParticleSystem Breath;
 
 
    // private Animator anim;
@@ -34,7 +34,6 @@ public class enemycontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //changes between partol and chase methods
         if (canseeplayer(Dr) == false)
         {
             patrol();
@@ -49,28 +48,24 @@ public class enemycontroller : MonoBehaviour
     }
     private void patrol()
     {
-        //set move direction and speed
         if (Mr == true)
         {
             Vector3 Move = new Vector3(1,0, 0);
-            transform.position += Move * Speed * Time.deltaTime;
+            //transform.Translate(Move * Speed * Time.deltaTime);
+
+            transform.position += Move * Speed* Time.deltaTime;
 
         }
         else
         {
             Vector3 Move = new Vector3(-1, 0, 0);
+            //transform.Translate(Vector2.left * Speed * Time.deltaTime);
             transform.position += Move * Speed * Time.deltaTime;
         }
 
-        //detects floor
-        RaycastHit2D GdInfo = Physics2D.Raycast(Gd.position, Vector2.down, Dis); 
+        RaycastHit2D GdInfo = Physics2D.Raycast(Gd.position, Vector2.down, Dis);
 
-        //detects wall beteween 2 points
-        Vector2 endpos = Gd.position + Vector3.right;
-        RaycastHit2D hit = Physics2D.Linecast(Gd.position, endpos, 1 << LayerMask.NameToLayer("Action"));
-
-        // filps if there is a wall (ground) or if their is no floor (ground)
-        if (GdInfo.collider == false || hit.collider.gameObject.CompareTag("Ground"))
+        if (GdInfo.collider == false)
         {
             if (Mr == true)
             {
@@ -88,62 +83,73 @@ public class enemycontroller : MonoBehaviour
 
     private void Chase()
     {
-        //detectes ground
         RaycastHit2D GdInfo = Physics2D.Raycast(Gd.position, Vector2.down, Dis);
-        //dis to player
-        float dis = Vector3.Distance(transform.position, Player.position);
-
-        //move direction set in if/else
-        Vector3 Move = new Vector3();
-
-        //face direction and move direction set
         if (transform.position.x < Player.position.x)
         {
+            float temp = transform.position.x - Player.position.x;
 
-            Move = new Vector3(1, 0, 0);
 
             if (Mr == false)
-            {
+            { 
                 flip();
                 Mr = true;
             }
+            if (GdInfo.collider == true)
+            {
+                if (temp < Sd)
+                {
+                    transform.Translate(Vector2.right * 0 * Time.deltaTime);
+                }
+                else
+                {
+                    Vector3 Move = new Vector3(1, 0, 0);
+                    transform.position += Move * Speed * Time.deltaTime;
+                }
+                
+            }
+            else
+            {
+                transform.Translate(Vector2.right * 0 * Time.deltaTime);
+            }
+            
+
+
+
+
         }
         else if (transform.position.x > Player.position.x)
         {
 
-            Move = new Vector3(-1, 0, 0);
-
+            float temp = transform.position.x - Player.position.x;
             if (Mr == true)
             {
                 flip();
                 Mr = false;
             }
 
-
-        }
-
-        //speed set if ground located
-        if (GdInfo.collider == true)
+            if (GdInfo.collider == true)
             {
-                if (dis <= Sd)
+                if (temp < Sd)
                 {
-                    transform.position += Move * 0 * Time.deltaTime;
-                    Breath.gameObject.SetActive(true);
+                    transform.Translate(Vector2.left * 0 * Time.deltaTime);
                 }
                 else
                 {
-                    
+                    Vector3 Move = new Vector3(-1, 0, 0);
                     transform.position += Move * Speed * Time.deltaTime;
-                    Breath.gameObject.SetActive(false);
                 }
-                
+               
             }
-            
+            else
+            {
+                transform.Translate(Vector2.left * 0 * Time.deltaTime);
+            }
+           
 
-        
-       
+
+
+        }
     }
-
     private void flip()
     {
         Vector3 eulerAngles = transform.eulerAngles;
@@ -162,7 +168,7 @@ public class enemycontroller : MonoBehaviour
         }
         
 
-        Vector2 endpos = Castpoint.position + Vector3.right * castdis;
+        Vector2 endpos = Castpoint.position +Vector3.right * castdis;
         RaycastHit2D hit = Physics2D.Linecast(Castpoint.position, endpos, 1 << LayerMask.NameToLayer("Action"));
         if(hit.collider != null)
         {

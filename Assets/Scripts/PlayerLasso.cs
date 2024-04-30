@@ -40,7 +40,18 @@ public class PlayerLasso : MonoBehaviour
 
         if(Retrieve)
         {
-            MoveBack();
+            if (Vector3.Distance(objLasso.transform.position, player.transform.position) > 0f && Retrieve)
+            {
+                objLasso.transform.position = Vector3.SmoothDamp(objLasso.transform.position, player.transform.position, ref VelocityZero, Time.deltaTime * 0.001f);
+            }
+
+            if (Retrieve && Vector3.Distance(objLasso.transform.position, player.transform.position) <= 0f)
+            {
+                Vector3 forward = new Vector3(2, 0, 0);
+                objLasso.transform.position += forward;
+                Retrieve = false;
+                objLasso.SetActive(false);
+            }
         }
 
         if(Input.GetKeyDown(KeyCode.Mouse0))
@@ -49,6 +60,7 @@ public class PlayerLasso : MonoBehaviour
             Debug.Log("Player Location" + this.transform.position);
         }
 
+        switch(GameManager.instance.State) { }
     }
 
     /*****************************************/
@@ -81,23 +93,5 @@ public class PlayerLasso : MonoBehaviour
     {
         rb.AddForce(ThrowVector * 5);
     }
-
-    void MoveBack()
-    {
-        if (Vector3.Distance(objLasso.transform.position, player.transform.position) > 0 && Retrieve)
-        {
-            objLasso.transform.position = Vector3.SmoothDamp(objLasso.transform.position, player.transform.position, ref VelocityZero, Time.deltaTime * 0.001f);
-        }
-
-        if(Retrieve && Vector3.Distance(objLasso.transform.position, player.transform.position) <= 0.25)
-        {
-            Vector3 forward = new Vector3(2,0,0);
-            objLasso.transform.position += forward;
-            Retrieve = false;
-            objLasso.SetActive(false);
-        }
-    }
-
-
 
 }

@@ -1,95 +1,99 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.UIElements;
+using Debug = UnityEngine.Debug;
 
 public class PlayerLasso : MonoBehaviour
 {
+    public GameObject prefab;
     public GameObject objLasso;
-
-    public Rigidbody2D rb;
+    public Transform  LassoLocation;
+    public Transform  LassoBackLocation;
     public GameObject player;
 
-    private Vector3 Throw_Vector;
-    private Vector3 VelocityZero = Vector3.zero;
+    private GameState gState;
 
     public bool Retrieve { get; set; }
+    private Vector3 VelocityZero = Vector3.zero;
+    private bool FunctionDoOnce;
     // Start is called before the first frame update
 
     private void Awake()
     {
-        if(objLasso.GetComponent<Rigidbody2D>() == null)
-            rb = objLasso.GetComponent<Rigidbody2D>();
 
         if(player == null)
             player = GameManager.instance.Player;
+
+        GameManager.OnGameStateChanged += GameManagerOnStateChanged;
+        objLasso = Instantiate(prefab, LassoLocation.position, Quaternion.identity);
+        Retrieve = false;
     }
+
+
     // Update is called once per frame
     void Update()
     {
-        if(objLasso.activeSelf)
+        if (gState == GameState.PlayState)
         {
-            objLasso.transform.Rotate(0, 0, 2);
+            if(Input.GetMouseButtonDown(0)) 
+            {
+                LassoActive();
+            }
+            if(Input.GetMouseButton(0))
+            {
+                objLasso.transform.position = LassoLocation.position;
+            }
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                Retrieve = true;
+            }
+
+            if(Retrieve)
+            {
+                objLasso.transform.position = Vector3.SmoothDamp(objLasso.transform.position, LassoBackLocation.position, ref VelocityZero, Time.deltaTime * 0.1f);
+                if(Mathf.Abs(Vector3.Distance(objLasso.transform.position, LassoBackLocation.position)) < 0.25f)
+                {
+                    Vector3 forward = new Vector3(2, 0, 0);
+                    objLasso.transform.position += forward;
+                    Retrieve = false;
+                    objLasso.SetActive(false);
+                }
+            }
+
         }
-
-        if(Input.GetKeyDown(KeyCode.R))
+        else if (gState == GameState.DeathState)
         {
-            Retrieve = true;
-        }
 
-        if(Retrieve)
-        {
-            MoveBack();
-        }
-
-    }
-
-    /*****************************************/
-    private void OnMouseDown()
-    {
-        CalculateThrow();
-    }
-    private void OnMouseUp()
-    {
-        objLasso.SetActive(true);
-        Throw(Throw_Vector);
-    }
-    private void OnMouseDrag()
-    {
-        CalculateThrow();
-    }
-    /************************************/
-
-    void CalculateThrow()
-    {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 Distance = mousePos - this.transform.position;
-
-        Throw_Vector = -Distance.normalized * 100;
-
-    }
-
-    void Throw(Vector3 ThrowVector)
-    {
-        rb.AddForce(ThrowVector * 5);
-    }
-
-    void MoveBack()
-    {
-        if (Vector3.Distance(objLasso.transform.position, player.transform.position) > 0 && Retrieve)
-        {
-            objLasso.transform.position = Vector3.SmoothDamp(objLasso.transform.position, player.transform.position, ref VelocityZero, Time.deltaTime * 0.01f);
-        }
-
-        if(Retrieve && Vector3.Distance(objLasso.transform.position, player.transform.position) <= 0.25)
-        {
-            Vector3 forward = new Vector3(1,0,0);
-            objLasso.transform.position += forward;
-            Retrieve = false;
-            objLasso.SetActive(false);
         }
     }
+
+
+
+    /***************************************/
+    private void LassoActive()
+    {
+        FunctionDoOnce = true;
+        if(FunctionDoOnce)
+        {
+            objLasso.SetActive(true);
+            FunctionDoOnce = false;
+        }
+    }
+    private void GameManagerOnStateChanged(GameState state)
+    {
+        gState = state;
+    }
+    private void OnDestroy()
+    {
+        GameManager.OnGameStateChanged -= GameManagerOnStateChanged;
+    }
+
 
 
 

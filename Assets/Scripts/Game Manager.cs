@@ -8,13 +8,15 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameState State;
 
-    //public static event Action<GameState> OnGameStateChanged;
+    public static event Action<GameState> OnGameStateChanged;
 
     public GameObject[] Captured = new GameObject[2];
 
     public GameObject Player;
 
     public PauseMenu PauseMenuScript;
+
+    public bool isDebug;
     void Awake()
     {
         if(instance)
@@ -68,6 +70,8 @@ public class GameManager : MonoBehaviour
     public void UpdateGameState(GameState newState)
     {
         State = newState;
+
+        OnGameStateChanged?.Invoke(newState);
     }
 
     public void updateCapturedCreature(GameObject gObject)

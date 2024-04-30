@@ -23,8 +23,14 @@ public class enemycontroller : MonoBehaviour
     [SerializeField] private float Sd;
     [SerializeField] private Transform Castpoint;
 
-
-   // private Animator anim;
+    private void Awake()
+    {
+        if (Player == null)
+        {
+            Player = GameManager.instance.Player.transform;
+        }
+    }
+    // private Animator anim;
     // Start is called before the first frame update
     void Start()
     {

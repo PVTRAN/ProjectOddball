@@ -508,53 +508,7 @@ Transform:
   m_LocalScale: {x: 10, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
   m_Father: {fileID: 0}
-=======
-  m_Father: {fileID: 1740968414}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &53911872
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 53911873}
-  m_Layer: 0
-  m_Name: PlatformBin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &53911873
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53911872}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 73.767365, y: 9.803398, z: -15.918125}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1645014220}
-  - {fileID: 727323155}
-  - {fileID: 109477810}
-  - {fileID: 85783430}
-  - {fileID: 1325496129}
-  - {fileID: 2067238814}
-  - {fileID: 367250721}
-  - {fileID: 1688797567}
-  - {fileID: 99185859}
-  - {fileID: 1781253416}
-  - {fileID: 766014021}
-  m_Father: {fileID: 1769931291}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &65522665
 GameObject:
@@ -962,26 +916,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
 --- !u!61 &93772937
-=======
---- !u!4 &85783430
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85783429}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -109.53, y: -4.33, z: 51.119}
-  m_LocalScale: {x: 2.12499, y: 0.316665, z: 0.21108179}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 53911873}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &85783431
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1476,13 +1411,8 @@ Transform:
   m_GameObject: {fileID: 118954218}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7079345, w: 0.7062781}
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
   m_LocalPosition: {x: 12.01, y: -6.05, z: 0.44}
   m_LocalScale: {x: 10, y: 2.3008, z: 1}
-=======
-  m_LocalPosition: {x: -19.155563, y: 0.82179165, z: 51.458733}
-  m_LocalScale: {x: 10, y: 2.3008003, z: 1}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2163,13 +2093,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162757477}
   serializedVersion: 2
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.5, y: -0.03, z: 0}
-=======
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -106.98143, y: -0.1053501, z: 18.693941}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2637,10 +2562,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1899670631908770382, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 337141207}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
 --- !u!1001 &227106527
 PrefabInstance:
@@ -2784,34 +2706,9 @@ PrefabInstance:
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
   m_Modification:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
-=======
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1527082777}
-  - {fileID: 476609348}
-  - {fileID: 1242896270}
-  - {fileID: 654433728}
-  - {fileID: 136829806}
-  - {fileID: 1037926090}
-  - {fileID: 2021834597}
-  - {fileID: 1441465312}
-  m_Father: {fileID: 1769931291}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &300278878
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1092365288}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
     m_Modifications:
     - target: {fileID: 1231502447170181364, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
       propertyPath: m_LocalScale.x
@@ -2827,7 +2724,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1231502447170181364, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
       value: 32.13373
       objectReference: {fileID: 0}
     - target: {fileID: 1231502447170181364, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
@@ -2837,17 +2733,6 @@ PrefabInstance:
     - target: {fileID: 1231502447170181364, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.47
-=======
-      value: 7.560158
-      objectReference: {fileID: 0}
-    - target: {fileID: 1231502447170181364, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.7236336
-      objectReference: {fileID: 0}
-    - target: {fileID: 1231502447170181364, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 18.595428
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
       objectReference: {fileID: 0}
     - target: {fileID: 1231502447170181364, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2889,99 +2774,11 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 524044204}
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
-=======
-    - target: {fileID: 8613166374184620556, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
---- !u!1 &321681311 stripped
-=======
---- !u!1 &306974116
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1899670631908770382, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-  m_PrefabInstance: {fileID: 1019716757}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &321681318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321681311}
-  m_Enabled: 1
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
-=======
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: be28608a412284745bf8a1052a883b43, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &306974118
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306974116}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &306974119
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306974116}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.619602, y: -12.174928, z: 41.703327}
-  m_LocalScale: {x: 20, y: 4, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1740968414}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &308856573 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2357403118300734346, guid: 4c2012bc51015e8438152a82f7d7dc32, type: 3}
-  m_PrefabInstance: {fileID: 1454339083}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &321681311 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1899670631908770382, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
@@ -2995,20 +2792,11 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321681311}
   m_Enabled: 1
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b125e51dd318c464089eea80132964e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 10
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
-=======
---- !u!4 &321681324 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1231502447170181364, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-  m_PrefabInstance: {fileID: 1019716757}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
 --- !u!1001 &324436823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3128,29 +2916,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &337141200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1899670631908770382, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-  m_PrefabInstance: {fileID: 224539252}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &337141207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 337141200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b125e51dd318c464089eea80132964e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 10
---- !u!4 &337141213 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1231502447170181364, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-  m_PrefabInstance: {fileID: 224539252}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &339413221
 GameObject:
   m_ObjectHideFlags: 0
@@ -3947,11 +3712,7 @@ Transform:
   m_GameObject: {fileID: 435317441}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7122268, w: 0.7019494}
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
   m_LocalPosition: {x: 1.5, y: -0.58, z: 0}
-=======
-  m_LocalPosition: {x: -107.98143, y: -0.6553501, z: 18.693941}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
   m_LocalScale: {x: 1, y: 1.0875001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4888,11 +4649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2039515358884678861, guid: 8d62ec8877060164aad1c63fb285dde6, type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
       value: 11.62
-=======
-      value: -11.52
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
       objectReference: {fileID: 0}
     - target: {fileID: 2039515358884678861, guid: 8d62ec8877060164aad1c63fb285dde6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5227,101 +4984,12 @@ GameObject:
   - component: {fileID: 589021757}
   - component: {fileID: 589021756}
   m_Layer: 0
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
-=======
-  m_Name: Background01 (13)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &577121512
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 577121511}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -32768
-  m_Sprite: {fileID: 21300000, guid: 209c0fd416aa0cb478ae37fe1b6edfdb, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 9.6, y: 5.4}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &577121513
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 577121511}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.52769, y: -0.5420499, z: 86.90076}
-  m_LocalScale: {x: 1.5, y: 2.6040874, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2023985062}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &589021755
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 589021759}
-  - component: {fileID: 589021758}
-  - component: {fileID: 589021757}
-  m_Layer: 0
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
   m_Name: BaseFloor1 (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
 --- !u!61 &589021756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5367,8 +5035,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
-=======
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
 --- !u!23 &589021757
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5434,66 +5100,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
-=======
---- !u!1 &592835026
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 592835027}
-  m_Layer: 0
-  m_Name: MushroomsBin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &592835027
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592835026}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.779312, y: 1.4827332, z: 19.287329}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 275626487}
-  - {fileID: 1730355263}
-  - {fileID: 1555252086}
-  - {fileID: 1136290804}
-  - {fileID: 978959379}
-  - {fileID: 129471389}
-  - {fileID: 1046756950}
-  - {fileID: 927582819}
-  - {fileID: 37223555}
-  - {fileID: 1521252568}
-  - {fileID: 672409119}
-  - {fileID: 484783566}
-  - {fileID: 1428274271}
-  - {fileID: 1950404941}
-  - {fileID: 1500357921}
-  - {fileID: 784131648}
-  - {fileID: 1327352768}
-  - {fileID: 1333551001}
-  - {fileID: 1093062663}
-  - {fileID: 1134840986}
-  - {fileID: 621067451}
-  - {fileID: 1905261416}
-  - {fileID: 1055362294}
-  - {fileID: 1477954096}
-  - {fileID: 308856573}
-  - {fileID: 853524256}
-  m_Father: {fileID: 1769931291}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
 --- !u!1 &596445301
 GameObject:
   m_ObjectHideFlags: 0
@@ -5505,10 +5111,7 @@ GameObject:
   - component: {fileID: 596445305}
   - component: {fileID: 596445304}
   - component: {fileID: 596445303}
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
   - component: {fileID: 596445302}
-=======
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
   m_Layer: 0
   m_Name: BaseFloor2 (11)
   m_TagString: Ground
@@ -5516,7 +5119,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
 --- !u!61 &596445302
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5562,8 +5164,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
-=======
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
 --- !u!23 &596445303
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6537,13 +6137,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727323151}
   serializedVersion: 2
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.91, y: 0.86, z: 0}
-=======
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -72.57257, y: -6.3220015, z: 51.76613}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
   m_LocalScale: {x: 0.093609, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7102,14 +6697,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
-=======
---- !u!4 &784131648 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5121261594680905531, guid: 8f71c65da202a1548a8734589db5f6fa, type: 3}
-  m_PrefabInstance: {fileID: 1242324739}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
 --- !u!1 &810198165
 GameObject:
   m_ObjectHideFlags: 0
@@ -7187,13 +6774,8 @@ Transform:
   m_GameObject: {fileID: 810198165}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7079345, w: 0.7062781}
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
   m_LocalPosition: {x: 12.01, y: -16.02, z: 0.44}
   m_LocalScale: {x: 10, y: 2.3008, z: 1}
-=======
-  m_LocalPosition: {x: -19.155563, y: -9.148209, z: 51.458733}
-  m_LocalScale: {x: 10, y: 2.3008003, z: 1}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -8756,43 +8338,6 @@ Transform:
   m_LocalScale: {x: 10, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
-=======
-  m_Father: {fileID: 1740968414}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1092365287
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1092365288}
-  m_Layer: 0
-  m_Name: EnemyBin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1092365288
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092365287}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.573574, y: 2.1236336, z: -19.065428}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 321681324}
-  - {fileID: 337141213}
-  - {fileID: 1744881031}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1093918654 stripped
@@ -9311,141 +8856,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f71c65da202a1548a8734589db5f6fa, type: 3}
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
-=======
---- !u!1001 &1217014247
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 946721474}
-    m_Modifications:
-    - target: {fileID: 1274954305527900, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      propertyPath: m_Name
-      value: Willow_tree1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737389527594468, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.82322
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737389527594468, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.82322
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737389527594468, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.30163637
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737389527594468, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -151.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737389527594468, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.7114754
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737389527594468, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.541668
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737389527594468, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737389527594468, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737389527594468, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737389527594468, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737389527594468, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737389527594468, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737389527594468, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136670558102928648, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 136670558102928648, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1274954305527900, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1217014249}
-  m_SourcePrefab: {fileID: 100100000, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
---- !u!1 &1217014248 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1274954305527900, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-  m_PrefabInstance: {fileID: 1217014247}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1217014249
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217014248}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.021638393, y: 4.7036715}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.4708357, y: 10.143724}
-  m_EdgeRadius: 0
---- !u!4 &1217014252 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4737389527594468, guid: 76ca9846e495a3a42a47f16f51d18fb0, type: 3}
-  m_PrefabInstance: {fileID: 1217014247}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
 --- !u!1001 &1218177413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11489,92 +10899,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
-=======
---- !u!1 &1610086274
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1610086277}
-  - component: {fileID: 1610086276}
-  - component: {fileID: 1610086275}
-  m_Layer: 0
-  m_Name: BaseFloor1 (7)
-  m_TagString: Ground
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &1610086275
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610086274}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: be28608a412284745bf8a1052a883b43, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1610086276
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610086274}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1610086277
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610086274}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -53.5096, y: -12.174928, z: 41.203327}
-  m_LocalScale: {x: 20, y: 4, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1740968414}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
 --- !u!1 &1615208673
 GameObject:
   m_ObjectHideFlags: 0
@@ -11991,13 +11315,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645014216}
   serializedVersion: 2
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.21, y: -0.25, z: 0}
-=======
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -74.27257, y: -7.4320016, z: 51.76613}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
   m_LocalScale: {x: 0.2296884, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12170,195 +11489,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648897503}
   serializedVersion: 2
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 71.78, y: -11.029999, z: -0.37}
   m_LocalScale: {x: 10, y: 4, z: 1}
-=======
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 42.270397, y: -12.294927, z: 41.33333}
-  m_LocalScale: {x: 10, y: 4, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1740968414}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1674909448
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1674909452}
-  - component: {fileID: 1674909451}
-  - component: {fileID: 1674909450}
-  - component: {fileID: 1674909449}
-  - component: {fileID: 1674909453}
-  m_Layer: 0
-  m_Name: Square
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!50 &1674909449
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674909448}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
---- !u!61 &1674909450
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674909448}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0047063828, y: -0.009411991}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.1600056, y: 1.1882428}
-  m_EdgeRadius: 0
---- !u!212 &1674909451
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674909448}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1674909452
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674909448}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.88, y: 0.07, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
-=======
---- !u!114 &1674909453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674909448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ae5b9446e8df024589acc689d07d83b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpBoost: 10
-  duration: 10
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
 --- !u!1 &1688797563
 GameObject:
   m_ObjectHideFlags: 0
@@ -12632,90 +11769,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.132}
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
-=======
---- !u!4 &1730355263 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5121261594680905531, guid: 8f71c65da202a1548a8734589db5f6fa, type: 3}
-  m_PrefabInstance: {fileID: 1473215617}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1740968413
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1740968414}
-  m_Layer: 0
-  m_Name: FloorBin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1740968414
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1740968413}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.7944, y: 3.8863244, z: -5.855324}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 754783055}
-  - {fileID: 1533595237}
-  - {fileID: 589021759}
-  - {fileID: 888552937}
-  - {fileID: 1610086277}
-  - {fileID: 306974119}
-  - {fileID: 1602775264}
-  - {fileID: 1355254691}
-  - {fileID: 1185970907}
-  - {fileID: 1068596570}
-  - {fileID: 46171219}
-  - {fileID: 93772940}
-  - {fileID: 1648897507}
-  - {fileID: 642469667}
-  - {fileID: 1343940992}
-  - {fileID: 455050446}
-  - {fileID: 869200188}
-  - {fileID: 480184830}
-  - {fileID: 174918760}
-  - {fileID: 139565212}
-  - {fileID: 966991038}
-  - {fileID: 77644769}
-  - {fileID: 1044508762}
-  - {fileID: 65522669}
-  - {fileID: 706875184}
-  - {fileID: 928089716}
-  - {fileID: 876102655}
-  - {fileID: 27229774}
-  - {fileID: 1933892676}
-  - {fileID: 2053931990}
-  - {fileID: 596445305}
-  - {fileID: 1839029653}
-  - {fileID: 764233168}
-  - {fileID: 126690847}
-  - {fileID: 362479746}
-  - {fileID: 158546788}
-  - {fileID: 565268051}
-  - {fileID: 1768456780}
-  - {fileID: 508742465}
-  - {fileID: 85524330}
-  m_Father: {fileID: 1769931291}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1744881031 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1231502447170181364, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-  m_PrefabInstance: {fileID: 300278878}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
 --- !u!1 &1756301995
 GameObject:
   m_ObjectHideFlags: 0
@@ -13613,14 +12666,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.134}
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
-=======
---- !u!4 &1905261416 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5121261594680905531, guid: 8f71c65da202a1548a8734589db5f6fa, type: 3}
-  m_PrefabInstance: {fileID: 2115791401}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
 --- !u!1 &1910592100
 GameObject:
   m_ObjectHideFlags: 0
@@ -14010,80 +13055,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.132}
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
-=======
---- !u!1 &1979241635
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1979241636}
-  m_Layer: 0
-  m_Name: CubeObstacleBin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1979241636
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979241635}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 97.76623, y: 2.696746, z: 17.154062}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 435317445}
-  - {fileID: 162757481}
-  - {fileID: 1292834151}
-  - {fileID: 167969002}
-  - {fileID: 25407218}
-  - {fileID: 432449120}
-  m_Father: {fileID: 1769931291}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2001687354
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2001687355}
-  m_Layer: 0
-  m_Name: RocksBin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2001687355
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001687354}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.591019, y: 3.0728254, z: 8.789646}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 106041597}
-  - {fileID: 985511959}
-  - {fileID: 294576907}
-  m_Father: {fileID: 1769931291}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity
 --- !u!1 &2021834593
 GameObject:
   m_ObjectHideFlags: 0
@@ -14886,7 +13857,6 @@ SceneRoots:
   - {fileID: 224539252}
   - {fileID: 300278878}
   - {fileID: 329026955}
-<<<<<<< HEAD:Assets/Scenes/SMarshall Level.unity
   - {fileID: 1363871151}
   - {fileID: 1386179916}
   - {fileID: 1139527001}
@@ -14917,11 +13887,3 @@ SceneRoots:
   - {fileID: 448085496}
   - {fileID: 639898530}
   - {fileID: 608881437}
-=======
-  - {fileID: 1311313233}
-  - {fileID: 1769931291}
-  - {fileID: 37241764}
-  - {fileID: 1092365288}
-  - {fileID: 708790348}
-  - {fileID: 1674909452}
->>>>>>> parent of 583de59 (Level design):Assets/Scenes/Levels/SMarshall Level.unity

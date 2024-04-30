@@ -484,33 +484,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1891824666049354779, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-      propertyPath: Breath
-      value: 
-      objectReference: {fileID: 469051505}
-    - target: {fileID: 1891824666049354779, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 1385125173}
-    - target: {fileID: 3785745914434410898, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.58063823
-      objectReference: {fileID: 0}
-    - target: {fileID: 3785745914434410898, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.0013
-      objectReference: {fileID: 0}
-    - target: {fileID: 3785745914434410898, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0301
-      objectReference: {fileID: 0}
-    - target: {fileID: 3785745914434410898, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 6497278504919028271, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8365788213389761771, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
       propertyPath: m_Name
       value: Odd_Creature_004
@@ -521,11 +497,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8553463372884839828, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.630002
+      value: 4.62
       objectReference: {fileID: 0}
     - target: {fileID: 8553463372884839828, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.017936
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8553463372884839828, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
       propertyPath: m_LocalRotation.w
@@ -556,18 +532,6 @@ PrefabInstance:
       value: -83.439
       objectReference: {fileID: 0}
     - target: {fileID: 8816877079236347955, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8816877079236347955, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8816877079236347955, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8816877079236347955, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
       propertyPath: CollisionModule.m_Planes.Array.data[0]
       value: 
       objectReference: {fileID: 1385125173}
@@ -576,11 +540,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
---- !u!198 &469051505 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8816877079236347955, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
-  m_PrefabInstance: {fileID: 365768588}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1045225736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -652,6 +611,10 @@ PrefabInstance:
     - target: {fileID: 7823074645409184083, guid: 8d62ec8877060164aad1c63fb285dde6, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666877305640248604, guid: 8d62ec8877060164aad1c63fb285dde6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9059118570190115119, guid: 8d62ec8877060164aad1c63fb285dde6, type: 3}
       propertyPath: m_Layer

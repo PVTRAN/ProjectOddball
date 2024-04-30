@@ -93,6 +93,8 @@ public class GameManager : MonoBehaviour
     {
         return Captured[CapturedIndex];
     }
+
+
 }
 
 public enum GameState

@@ -32,6 +32,10 @@ public class PlayerLasso : MonoBehaviour
 
         GameManager.OnGameStateChanged += GameManagerOnStateChanged;
         objLasso = Instantiate(prefab, LassoLocation.position, Quaternion.identity);
+        if(objLasso.GetComponent<Lasso>().pLasso == null)
+        {
+            objLasso.GetComponent<Lasso>().pLasso = this;
+        }
         objLasso.SetActive(false);
         Retrieve = false;
     }
@@ -44,6 +48,7 @@ public class PlayerLasso : MonoBehaviour
         {
             if(Input.GetMouseButtonDown(0)) 
             {
+                FunctionDoOnce = true;
                 LassoActive();
             }
             if(Input.GetMouseButton(0))

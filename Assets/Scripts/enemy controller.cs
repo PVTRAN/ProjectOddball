@@ -7,23 +7,27 @@ using UnityEngine.UIElements;
 
 public class enemycontroller : MonoBehaviour
 {
-    //move speed
-    [SerializeField] private float Speed;
-
+    //root
+    [SerializeField] private GameObject root;
     //move
-    [SerializeField] Animator animator;
+    [SerializeField] private Animator animator;
     [SerializeField] LayerMask target;
-    bool ground;
+    [SerializeField] private float Speed;
+    private bool ground;
+    private bool wall;
     //patrol
     [SerializeField] private float Dis;
     private bool Mr = true;
     [SerializeField] private Transform Gd;
-
+    
     //Chase
+    private bool SeePlayer;
     [SerializeField] private Transform Player;
     [SerializeField] private float Dr;
     [SerializeField] private float Sd;
-    [SerializeField] private Transform Castpoint;
+    [SerializeField] private ParticleSystem attack;
+    [SerializeField] private GameObject see;
+    private bool ack = false;
 
     private void Awake()
     {
@@ -32,43 +36,57 @@ public class enemycontroller : MonoBehaviour
             Player = GameManager.instance.Player.transform;
         }
         ground = true;
+        wall = false;
+        SeePlayer = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         GroundCheck();
-        if (canseeplayer(Dr) == false)
+        wallCheck();
+        canseeplayer();
+        if (!SeePlayer)
         {
             patrol();
         }
         else
         {
-           // Chase();
+           Chase();
         }
-
+        if(ack)
+        {
+            attack.Play();
+            attack.GetComponent<BoxCollider>().enabled = true;
+        }
+        else
+        {
+            attack.Stop();
+            attack.GetComponent<BoxCollider>().enabled = false;
+        }
       
         
     }
     private void patrol()
     {
+        ack = false;
         animator.SetBool("IsWalking", true);
         if (Mr == true)
         {
             Vector3 Move = new Vector3(1,0, 0);
             //transform.Translate(Move * Speed * Time.deltaTime);
 
-            transform.position += Move * Speed* Time.deltaTime;
+            root.transform.position += Move * Speed* Time.deltaTime;
 
         }
         else
         {
             Vector3 Move = new Vector3(-1, 0, 0);
             //transform.Translate(Vector2.left * Speed * Time.deltaTime);
-            transform.position += Move * Speed * Time.deltaTime;
+            root.transform.position += Move * Speed * Time.deltaTime;
         }
 
-        if (!ground)
+        if (!ground || wall)
         {
             if (Mr == true)
             {
@@ -86,81 +104,36 @@ public class enemycontroller : MonoBehaviour
 
     private void Chase()
     {
-        RaycastHit2D GdInfo = Physics2D.Raycast(Gd.position, Vector2.down, Dis);
-        if (transform.position.x < Player.position.x)
+        ack = true;
+        if (root.transform.position.x < Player.position.x)
         {
-            float temp = transform.position.x - Player.position.x;
+            float temp = root.transform.position.x - Player.position.x;
 
-
-            if (Mr == false)
-            { 
-                flip();
-                Mr = true;
-            }
-            if (GdInfo.collider == true)
+            if (ground || !wall)
             {
-                if (temp < Sd)
+                if (temp <= Sd)
                 {
                     animator.SetBool("IsWalking", false);
                     Vector3 Move = new Vector3(0, 0, 0);
-                    transform.position += Move * Speed * Time.deltaTime;
+                    root.transform.position += Move * Speed * Time.deltaTime;
+                    
                 }
-                else
-                {
-                    animator.SetBool("IsWalking", true);
-                    Vector3 Move = new Vector3(1, 0, 0);
-                    transform.position += Move * Speed * Time.deltaTime;
-                }
-                
             }
-            else
-            {
-                animator.SetBool("IsWalking", false);
-                Vector3 Move = new Vector3(0, 0, 0);
-                transform.position += Move * Speed * Time.deltaTime;
-            }
-            
-
-
-
-
         }
         else if (transform.position.x > Player.position.x)
         {
 
-            float temp = transform.position.x - Player.position.x;
-            if (Mr == true)
-            {
-                flip();
-                Mr = false;
-            }
+            float temp = root.transform.position.x - Player.position.x;
 
-            if (GdInfo.collider == true)
+            if (ground || !wall)
             {
                 if (temp < Sd)
                 {
                     animator.SetBool("IsWalking", false);
                     Vector3 Move = new Vector3(0, 0, 0);
-                    transform.position += Move * Speed * Time.deltaTime;
+                    root.transform.position += Move * Speed * Time.deltaTime;
                 }
-                else
-                {
-                    animator.SetBool("IsWalking", true);
-                    Vector3 Move = new Vector3(-1, 0, 0);
-                    transform.position += Move * Speed * Time.deltaTime;
-                }
-               
             }
-            else
-            {
-                animator.SetBool("IsWalking", false);
-                Vector3 Move = new Vector3(0, 0, 0);
-                transform.position += Move * Speed * Time.deltaTime;
-            }
-           
-
-
-
         }
     }
     private void flip()
@@ -171,32 +144,22 @@ public class enemycontroller : MonoBehaviour
 
     }
 
-    private bool canseeplayer(float distance)
+    private void canseeplayer()
     {
-        float castdis = distance;
-        bool temp = false;
-        if (Mr == false)
-        {
-            castdis *= -1;
-        }
+        Physics.Raycast(see.transform.position, -see.transform.forward, out RaycastHit hit, Dr);
         
-
-        Vector2 endpos = Castpoint.position +Vector3.right * castdis;
-        RaycastHit2D hit = Physics2D.Linecast(Castpoint.position, endpos, 1 << LayerMask.NameToLayer("Action"));
-        if(hit.collider != null)
+        if (hit.collider != null)
         {
-            if (hit.collider.gameObject.CompareTag("Player"))
+            if (hit.collider.tag == "Player")
             {
-                temp = true;
+                SeePlayer = true;
             }
-            else
-            {
-                temp = false;
-            }   
         }
-        return temp;
+        else
+        {
+            SeePlayer = false;
+        }
     }
-
     void GroundCheck()
     {
         if (Physics.Raycast(Gd.position,-Gd.up,Dis,target))
@@ -206,6 +169,17 @@ public class enemycontroller : MonoBehaviour
         else
         {
             ground = false;
+        }
+    }
+    void wallCheck()
+    {
+        if (Physics.Raycast(Gd.position, Gd.right, Dis, target))
+        {
+            wall = true;
+        }
+        else
+        {
+            wall = false;
         }
     }
 }

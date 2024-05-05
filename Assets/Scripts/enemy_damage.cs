@@ -6,20 +6,18 @@ public class enemy_damage : MonoBehaviour
 {
     [SerializeField] float Damage;
     [SerializeField] float Timer;
-    [SerializeField] ParticleSystem fire;
     private bool takeDamage = true;
     
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerStay(Collider other)
     {
-        if (fire.gameObject.active == true)
-        {
+      
             if (other.gameObject.tag == "Player")
             {
 
                 Health player = other.GetComponent<Health>();
                 StartCoroutine(TakeDamage(Timer, player));
             }
-        }
+        
     }
 
     IEnumerator TakeDamage(float time, Health player)

@@ -8,11 +8,11 @@ public class WindPower : MonoBehaviour
         public float jumpBoost = 20f;
         public float duration = 10f;
 
-        private void OnCollisionEnter2D(Collision2D other)
+        private void OnCollisionEnter(Collision collision)
         {
-            if (other.gameObject.CompareTag("Player"))
+            if (collision.gameObject.CompareTag("Player"))
             {
-                MovementsController movementsController = other.gameObject.GetComponent<MovementsController>();
+                MovementsController movementsController = collision.gameObject.GetComponent<MovementsController>();
                 if (movementsController != null)
                 {
                     Debug.Log("Jump activated");

@@ -14,13 +14,13 @@ public class MovementsController : MonoBehaviour
     //---------------------------
     private bool isGrounded = true;
     //---------------------------
-    private Rigidbody2D rb;
+    private Rigidbody rb;
     //---------------------------
-   // [SerializeField] private Animator move;
+    [SerializeField] private Animator move;
     void Start()
     {
         //initialize the component
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         start = transform.position;
         //health = 3; 
     }
@@ -39,24 +39,22 @@ public class MovementsController : MonoBehaviour
         transform.position += new Vector3(moveHorizontal, 0, 0) * Time.deltaTime;
         if (start != transform.position)
         {
-           // move.SetBool("IsWalking", true);
+            move.SetBool("IsWalking", true);
             start = transform.position;
         }
-        //else
-        //{
-        //    move.SetBool("IsWalking", false);
-        //}
-
-        
+        else
+        {
+            move.SetBool("IsWalking", false);
+        }
     }
     
     void BaseJumpHandler()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(new Vector3(0, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector3(0, jumpForce), ForceMode.Impulse);
             isGrounded = false;
-            //move.SetBool("IsJumping", true);
+            move.SetBool("IsJumping", true);
         }
     }
     
@@ -76,12 +74,12 @@ public class MovementsController : MonoBehaviour
     }
     
     // Detect collision with the ground
-    void OnCollisionEnter3D(Collision2D collision)
+    void OnCollisionEnter3D(Collision collision)
     {
         if (collision.collider.tag == "Ground")  
         {
             isGrounded = true;
-            //move.SetBool("IsJumping", false);
+            move.SetBool("IsJumping", false);
         }
     }
     

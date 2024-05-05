@@ -16,7 +16,7 @@ public class MovementsController : MonoBehaviour
     //---------------------------
     private Rigidbody rb;
     //---------------------------
-    [SerializeField] private Animator move;
+   // [SerializeField] private Animator move;
     void Start()
     {
         //initialize the component
@@ -39,12 +39,12 @@ public class MovementsController : MonoBehaviour
         transform.position += new Vector3(moveHorizontal, 0, 0) * Time.deltaTime;
         if (start != transform.position)
         {
-            move.SetBool("IsWalking", true);
+          //  move.SetBool("IsWalking", true);
             start = transform.position;
         }
         else
         {
-            move.SetBool("IsWalking", false);
+          //  move.SetBool("IsWalking", false);
         }
     }
     
@@ -54,7 +54,7 @@ public class MovementsController : MonoBehaviour
         {
             rb.AddForce(new Vector3(0, jumpForce), ForceMode.Impulse);
             isGrounded = false;
-            move.SetBool("IsJumping", true);
+           // move.SetBool("IsJumping", true);
         }
     }
     
@@ -79,7 +79,7 @@ public class MovementsController : MonoBehaviour
         if (collision.collider.tag == "Ground")  
         {
             isGrounded = true;
-            move.SetBool("IsJumping", false);
+            //move.SetBool("IsJumping", false);
         }
     }
     

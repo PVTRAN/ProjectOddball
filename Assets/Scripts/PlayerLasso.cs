@@ -11,8 +11,8 @@ using Debug = UnityEngine.Debug;
 
 public class PlayerLasso : MonoBehaviour
 {
-    public GameObject prefab;
     public GameObject objLasso;
+    public Rigidbody LassoRB;
     public Transform  LassoLocation;
     public Transform  LassoBackLocation;
     public GameObject player;
@@ -28,15 +28,17 @@ public class PlayerLasso : MonoBehaviour
     {
 
         if(player == null)
-            player = GameManager.instance.Player;
+            player = GameObject.FindGameObjectWithTag("Player");
+
+        if (LassoRB == null)
+        {
+            LassoRB = objLasso.GetComponent<Rigidbody>();
+        }
+
+        GameManager.instance.Player = player;
 
         GameManager.OnGameStateChanged += GameManagerOnStateChanged;
-        objLasso = Instantiate(prefab, LassoLocation.position, Quaternion.identity);
-        if(objLasso.GetComponent<Lasso>().pLasso == null)
-        {
-            objLasso.GetComponent<Lasso>().pLasso = this;
-        }
-        objLasso.SetActive(false);
+        gState = GameManager.instance.CheckGameState();
         Retrieve = false;
     }
 
@@ -44,53 +46,51 @@ public class PlayerLasso : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gState == GameState.PlayState)
+        switch(gState)
         {
-            if(Input.GetMouseButtonDown(0)) 
-            {
-                FunctionDoOnce = true;
-                LassoActive();
-            }
-            if(Input.GetMouseButton(0))
-            {
-                objLasso.transform.position = LassoLocation.position;
-            }
-            if(Input.GetKeyDown(KeyCode.R))
-            {
-                Retrieve = true;
-            }
-
-            if(Retrieve)
-            {
-                objLasso.transform.position = Vector3.SmoothDamp(objLasso.transform.position, LassoBackLocation.position, ref VelocityZero, Time.deltaTime * 0.1f);
-                if(Mathf.Abs(Vector3.Distance(objLasso.transform.position, LassoBackLocation.position)) < 0.25f)
+            case GameState.PlayState:
+                if (Input.GetKeyDown(KeyCode.F))
                 {
-                    Vector3 forward = new Vector3(2, 0, 0);
-                    objLasso.transform.position += forward;
-                    Retrieve = false;
-                    objLasso.SetActive(false);
+                    objLasso.SetActive(true);
                 }
-            }
+                if (Input.GetKey(KeyCode.F))
+                {
+                    objLasso.transform.position = LassoLocation.position;
+                }
+                if (Input.GetKeyUp(KeyCode.F))
+                {
+                    LassoRB.AddForce(new Vector3(1.0f, 0.5f, 0) * 3, ForceMode.Impulse);
+                }
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    Retrieve = true;
+                }
 
-        }
-        else if (gState == GameState.DeathState)
-        {
-
+                if (Retrieve)
+                {
+                    if (Mathf.Abs(Vector3.Distance(objLasso.transform.position, LassoBackLocation.position)) > 0.25f)
+                    {
+                        objLasso.transform.position = Vector3.SmoothDamp(objLasso.transform.position, LassoBackLocation.position, ref VelocityZero, Time.deltaTime * 0.1f);
+                    }
+                    else
+                    {
+                        objLasso.transform.position = LassoLocation.position;
+                        LassoRB.velocity = VelocityZero;
+                        objLasso.SetActive(false);
+                        Retrieve = false;
+                    }
+                }
+                break;
+            case GameState.PauseState:
+                break;
+            case GameState.DeathState:
+                break;
         }
     }
 
 
 
     /***************************************/
-    private void LassoActive()
-    {
-        FunctionDoOnce = true;
-        if(FunctionDoOnce)
-        {
-            objLasso.SetActive(true);
-            FunctionDoOnce = false;
-        }
-    }
     private void GameManagerOnStateChanged(GameState state)
     {
         gState = state;

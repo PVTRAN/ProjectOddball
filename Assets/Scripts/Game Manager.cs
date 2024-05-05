@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] Captured = new GameObject[2];
 
     public GameObject Player;
-
+    public bool PlayerExist { get; set; }
     public PauseMenu PauseMenuScript;
 
     public bool isDebug;
@@ -26,10 +26,6 @@ public class GameManager : MonoBehaviour
         else
         {
             instance = this;
-        }
-        if(Player == null)
-        {
-            Player = GameObject.FindWithTag("Player");
         }
         DontDestroyOnLoad(this);
 
@@ -76,6 +72,10 @@ public class GameManager : MonoBehaviour
 
         OnGameStateChanged?.Invoke(newState);
     }
+    public GameState CheckGameState() 
+    {
+        return State; 
+    }
 
     public void updateCapturedCreature(GameObject gObject)
     {
@@ -93,7 +93,6 @@ public class GameManager : MonoBehaviour
     {
         return Captured[CapturedIndex];
     }
-
 
 }
 

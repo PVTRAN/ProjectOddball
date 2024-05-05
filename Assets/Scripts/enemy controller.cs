@@ -14,12 +14,14 @@ public class enemycontroller : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] LayerMask target;
     bool ground;
+    bool wall;
     //patrol
     [SerializeField] private float Dis;
     private bool Mr = true;
     [SerializeField] private Transform Gd;
 
     //Chase
+    private bool SeePlayer;
     [SerializeField] private Transform Player;
     [SerializeField] private float Dr;
     [SerializeField] private float Sd;
@@ -32,19 +34,22 @@ public class enemycontroller : MonoBehaviour
             Player = GameManager.instance.Player.transform;
         }
         ground = true;
+        wall = false;
+        SeePlayer = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         GroundCheck();
+        wallCheck();
         if (canseeplayer(Dr) == false)
         {
             patrol();
         }
         else
         {
-           // Chase();
+           Chase();
         }
 
       
@@ -68,7 +73,7 @@ public class enemycontroller : MonoBehaviour
             transform.position += Move * Speed * Time.deltaTime;
         }
 
-        if (!ground)
+        if (!ground || wall)
         {
             if (Mr == true)
             {
@@ -86,7 +91,6 @@ public class enemycontroller : MonoBehaviour
 
     private void Chase()
     {
-        RaycastHit2D GdInfo = Physics2D.Raycast(Gd.position, Vector2.down, Dis);
         if (transform.position.x < Player.position.x)
         {
             float temp = transform.position.x - Player.position.x;
@@ -97,7 +101,7 @@ public class enemycontroller : MonoBehaviour
                 flip();
                 Mr = true;
             }
-            if (GdInfo.collider == true)
+            if (ground)
             {
                 if (temp < Sd)
                 {
@@ -135,7 +139,7 @@ public class enemycontroller : MonoBehaviour
                 Mr = false;
             }
 
-            if (GdInfo.collider == true)
+            if (ground)
             {
                 if (temp < Sd)
                 {
@@ -171,32 +175,21 @@ public class enemycontroller : MonoBehaviour
 
     }
 
-    private bool canseeplayer(float distance)
+    private void canseeplayer(float distance)
     {
-        float castdis = distance;
-        bool temp = false;
-        if (Mr == false)
+        Physics.Raycast(Gd.position, Gd.forward, out RaycastHit hit);
+        if (hit.collider != null)
         {
-            castdis *= -1;
-        }
-        
-
-        Vector2 endpos = Castpoint.position +Vector3.right * castdis;
-        RaycastHit2D hit = Physics2D.Linecast(Castpoint.position, endpos, 1 << LayerMask.NameToLayer("Action"));
-        if(hit.collider != null)
-        {
-            if (hit.collider.gameObject.CompareTag("Player"))
+            if (hit.collider.tag == "Player")
             {
-                temp = true;
+                SeePlayer = true;
             }
             else
             {
-                temp = false;
-            }   
+                SeePlayer = false;
+            }
         }
-        return temp;
     }
-
     void GroundCheck()
     {
         if (Physics.Raycast(Gd.position,-Gd.up,Dis,target))
@@ -206,6 +199,17 @@ public class enemycontroller : MonoBehaviour
         else
         {
             ground = false;
+        }
+    }
+    void wallCheck()
+    {
+        if (Physics.Raycast(Gd.position, Gd.right, Dis, target))
+        {
+            wall = true;
+        }
+        else
+        {
+            wall = false;
         }
     }
 }

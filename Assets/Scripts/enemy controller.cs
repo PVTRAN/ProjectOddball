@@ -10,9 +10,11 @@ public class enemycontroller : MonoBehaviour
     //move speed
     [SerializeField] private float Speed;
 
+    //move
+    [SerializeField] Animator animator;
+    [SerializeField] LayerMask target;
+    bool ground;
     //patrol
-
-
     [SerializeField] private float Dis;
     private bool Mr = true;
     [SerializeField] private Transform Gd;
@@ -29,24 +31,20 @@ public class enemycontroller : MonoBehaviour
         {
             Player = GameManager.instance.Player.transform;
         }
-    }
-    // private Animator anim;
-    // Start is called before the first frame update
-    void Start()
-    {
- 
+        ground = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        GroundCheck();
         if (canseeplayer(Dr) == false)
         {
             patrol();
         }
         else
         {
-            Chase();
+           // Chase();
         }
 
       
@@ -54,6 +52,7 @@ public class enemycontroller : MonoBehaviour
     }
     private void patrol()
     {
+        animator.SetBool("IsWalking", true);
         if (Mr == true)
         {
             Vector3 Move = new Vector3(1,0, 0);
@@ -69,9 +68,7 @@ public class enemycontroller : MonoBehaviour
             transform.position += Move * Speed * Time.deltaTime;
         }
 
-        RaycastHit2D GdInfo = Physics2D.Raycast(Gd.position, Vector2.down, Dis);
-
-        if (GdInfo.collider == false)
+        if (!ground)
         {
             if (Mr == true)
             {
@@ -104,10 +101,13 @@ public class enemycontroller : MonoBehaviour
             {
                 if (temp < Sd)
                 {
-                    transform.Translate(Vector2.right * 0 * Time.deltaTime);
+                    animator.SetBool("IsWalking", false);
+                    Vector3 Move = new Vector3(0, 0, 0);
+                    transform.position += Move * Speed * Time.deltaTime;
                 }
                 else
                 {
+                    animator.SetBool("IsWalking", true);
                     Vector3 Move = new Vector3(1, 0, 0);
                     transform.position += Move * Speed * Time.deltaTime;
                 }
@@ -115,7 +115,9 @@ public class enemycontroller : MonoBehaviour
             }
             else
             {
-                transform.Translate(Vector2.right * 0 * Time.deltaTime);
+                animator.SetBool("IsWalking", false);
+                Vector3 Move = new Vector3(0, 0, 0);
+                transform.position += Move * Speed * Time.deltaTime;
             }
             
 
@@ -137,10 +139,13 @@ public class enemycontroller : MonoBehaviour
             {
                 if (temp < Sd)
                 {
-                    transform.Translate(Vector2.left * 0 * Time.deltaTime);
+                    animator.SetBool("IsWalking", false);
+                    Vector3 Move = new Vector3(0, 0, 0);
+                    transform.position += Move * Speed * Time.deltaTime;
                 }
                 else
                 {
+                    animator.SetBool("IsWalking", true);
                     Vector3 Move = new Vector3(-1, 0, 0);
                     transform.position += Move * Speed * Time.deltaTime;
                 }
@@ -148,7 +153,9 @@ public class enemycontroller : MonoBehaviour
             }
             else
             {
-                transform.Translate(Vector2.left * 0 * Time.deltaTime);
+                animator.SetBool("IsWalking", false);
+                Vector3 Move = new Vector3(0, 0, 0);
+                transform.position += Move * Speed * Time.deltaTime;
             }
            
 
@@ -190,4 +197,15 @@ public class enemycontroller : MonoBehaviour
         return temp;
     }
 
+    void GroundCheck()
+    {
+        if (Physics.Raycast(Gd.position,-Gd.up,Dis,target))
+        {
+            ground = true;
+        }
+        else
+        {
+            ground = false;
+        }
+    }
 }

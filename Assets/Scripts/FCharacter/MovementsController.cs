@@ -54,7 +54,7 @@ public class MovementsController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector3(0, jumpForce), ForceMode2D.Impulse);
             isGrounded = false;
             move.SetBool("IsJumping", true);
         }
@@ -76,7 +76,7 @@ public class MovementsController : MonoBehaviour
     }
     
     // Detect collision with the ground
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter3D(Collision2D collision)
     {
         if (collision.collider.tag == "Ground")  
         {

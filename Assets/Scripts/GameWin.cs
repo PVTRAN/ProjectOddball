@@ -6,7 +6,7 @@ public class gameWin : MonoBehaviour
 {
 
     public GameObject GameWin;
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider other)
     {
         GameWin.SetActive(true);
         Time.timeScale = 0f;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovementsController : MonoBehaviour
 {
     public float speed = 5.0f;
+    Vector3 start;
     //---------------------------
     public float jumpForce = 7.0f;
     public float normalJumpForce;
@@ -15,11 +16,12 @@ public class MovementsController : MonoBehaviour
     //---------------------------
     private Rigidbody2D rb;
     //---------------------------
-    
+    [SerializeField] private Animator move;
     void Start()
     {
         //initialize the component
         rb = GetComponent<Rigidbody2D>();
+        start = transform.position;
         //health = 3; 
     }
     
@@ -35,6 +37,17 @@ public class MovementsController : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxis("Horizontal") * speed;  
         transform.position += new Vector3(moveHorizontal, 0, 0) * Time.deltaTime;
+        if (start != transform.position)
+        {
+            move.SetBool("IsWalking", true);
+            start = transform.position;
+        }
+        else
+        {
+            move.SetBool("IsWalking", false);
+        }
+
+        
     }
     
     void BaseJumpHandler()
@@ -43,6 +56,7 @@ public class MovementsController : MonoBehaviour
         {
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             isGrounded = false;
+            move.SetBool("IsJumping", true);
         }
     }
     
@@ -66,7 +80,8 @@ public class MovementsController : MonoBehaviour
     {
         if (collision.collider.tag == "Ground")  
         {
-            isGrounded = true;  
+            isGrounded = true;
+            move.SetBool("IsJumping", false);
         }
     }
     

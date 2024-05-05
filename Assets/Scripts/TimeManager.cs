@@ -11,12 +11,12 @@ public class TimeManager : MonoBehaviour
     public static int Minute {  get; private set; }
     public static int Hour { get; private set; }
 
-    private float minuteToRealTime = 0.5f;
+    private float minuteToRealTime = 1f;
     private float timer;
     void Start()
     {
         Minute = 0;
-        Hour = 10;
+        Hour = 0;
         timer = minuteToRealTime;
     }
 

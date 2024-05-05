@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovementsController : MonoBehaviour
 {
     public float speed = 5.0f;
+    Vector3 start;
     //---------------------------
     public float jumpForce = 7.0f;
     public float normalJumpForce;
@@ -13,13 +14,14 @@ public class MovementsController : MonoBehaviour
     //---------------------------
     private bool isGrounded = true;
     //---------------------------
-    private Rigidbody2D rb;
+    private Rigidbody rb;
     //---------------------------
-    
+    [SerializeField] private Animator move;
     void Start()
     {
         //initialize the component
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
+        start = transform.position;
         //health = 3; 
     }
     
@@ -35,14 +37,24 @@ public class MovementsController : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxis("Horizontal") * speed;  
         transform.position += new Vector3(moveHorizontal, 0, 0) * Time.deltaTime;
+        if (start != transform.position)
+        {
+            move.SetBool("IsWalking", true);
+            start = transform.position;
+        }
+        else
+        {
+            move.SetBool("IsWalking", false);
+        }
     }
     
     void BaseJumpHandler()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector3(0, jumpForce), ForceMode.Impulse);
             isGrounded = false;
+            move.SetBool("IsJumping", true);
         }
     }
     
@@ -62,17 +74,15 @@ public class MovementsController : MonoBehaviour
     }
     
     // Detect collision with the ground
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter3D(Collision collision)
     {
         if (collision.collider.tag == "Ground")  
         {
-            isGrounded = true;  
+            isGrounded = true;
+            move.SetBool("IsJumping", false);
         }
     }
     
 }
 
 //---------------------------------------
-
-
-

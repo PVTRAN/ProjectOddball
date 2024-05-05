@@ -483,6 +483,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97953497039086491, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bc39fab805b88654886e54ffde4c49b3, type: 2}
     - target: {fileID: 1891824666049354779, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
       propertyPath: Player
       value: 
@@ -531,6 +535,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -83.439
       objectReference: {fileID: 0}
+    - target: {fileID: 8613166374184620556, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1385125173}
     - target: {fileID: 8816877079236347955, guid: 9e7cc4627315773488c8540888e98c82, type: 3}
       propertyPath: CollisionModule.m_Planes.Array.data[0]
       value: 
@@ -722,6 +730,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6249589807605542656, guid: 8d62ec8877060164aad1c63fb285dde6, type: 3}
+      propertyPath: move
+      value: 
+      objectReference: {fileID: 1385125175}
     - target: {fileID: 7823074645409184083, guid: 8d62ec8877060164aad1c63fb285dde6, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -741,6 +753,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7823074645409184083, guid: 8d62ec8877060164aad1c63fb285dde6, type: 3}
       insertIndex: 6
       addedObject: {fileID: 1385125174}
+    - targetCorrespondingSourceObject: {fileID: 7823074645409184083, guid: 8d62ec8877060164aad1c63fb285dde6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1385125175}
   m_SourcePrefab: {fileID: 100100000, guid: 8d62ec8877060164aad1c63fb285dde6, type: 3}
 --- !u!1 &1045225737 stripped
 GameObject:
@@ -765,6 +780,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPoint: {x: 0, y: 0, z: 0}
+--- !u!95 &1385125175
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045225737}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 023413e117412224492ce2989ad3d26b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

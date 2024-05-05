@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dillon_Test.unity
     guid: 63136088afc87d64e9c71174cff12f11
+  - enabled: 0
+    path: Assets/Scenes/SMarshall Level.unity
+    guid: f9c6a7620a9195949ad42878dacb0ad2
+  - enabled: 1
+    path: Assets/Scenes/Levels/SMarshall Level.unity
+    guid: 5f5cd54fb72f5254ab7d87bdef6caf9d
   m_configObjects: {}

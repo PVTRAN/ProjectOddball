@@ -10,5 +10,4 @@ public class NewBehaviourScript : MonoBehaviour
         SceneManager.LoadScene(GameOverScreen); 
     }
 }
-
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         

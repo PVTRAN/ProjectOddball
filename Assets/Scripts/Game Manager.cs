@@ -27,7 +27,10 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
-
+        if(Player == null)
+        {
+            Player = GameObject.FindWithTag("Player");
+        }
         DontDestroyOnLoad(this);
 
     }
@@ -90,6 +93,8 @@ public class GameManager : MonoBehaviour
     {
         return Captured[CapturedIndex];
     }
+
+
 }
 
 public enum GameState

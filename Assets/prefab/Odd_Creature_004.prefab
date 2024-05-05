@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  Dis: 2
+  Dis: 1
   Gd: {fileID: 6987344239735696369}
   Player: {fileID: 0}
   Dr: 6

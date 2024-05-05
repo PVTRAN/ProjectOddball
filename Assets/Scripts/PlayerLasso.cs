@@ -21,7 +21,7 @@ public class PlayerLasso : MonoBehaviour
 
     public bool Retrieve { get; set; }
     private Vector3 VelocityZero = Vector3.zero;
-    private bool FunctionDoOnce;
+    private bool FunctionDoOnce = false;
     // Start is called before the first frame update
 
     private void Awake()
@@ -32,6 +32,11 @@ public class PlayerLasso : MonoBehaviour
 
         GameManager.OnGameStateChanged += GameManagerOnStateChanged;
         objLasso = Instantiate(prefab, LassoLocation.position, Quaternion.identity);
+        if(objLasso.GetComponent<Lasso>().pLasso == null)
+        {
+            objLasso.GetComponent<Lasso>().pLasso = this;
+        }
+        objLasso.SetActive(false);
         Retrieve = false;
     }
 
@@ -43,6 +48,7 @@ public class PlayerLasso : MonoBehaviour
         {
             if(Input.GetMouseButtonDown(0)) 
             {
+                FunctionDoOnce = true;
                 LassoActive();
             }
             if(Input.GetMouseButton(0))

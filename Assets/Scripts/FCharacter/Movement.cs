@@ -2,50 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementsController : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     public float speed = 5.0f;
-    Vector3 start;
+
     //---------------------------
     public float jumpForce = 7.0f;
+
+    //Movement script does not need to be here
+    //public float health; 
     public float normalJumpForce;
+
     //---------------------------
     public float JumpboostEndTime = 0; // how long boost will be active for 
+
     //---------------------------
     private bool isGrounded = true;
+
     //---------------------------
     private Rigidbody rb;
+
+    //currently used for sprint that is not working
+    //private float currentSpeed;
+    //public float speedMultiplier = 10.0f;
     //---------------------------
-    [SerializeField] private Animator move;
+
     void Start()
     {
-        //initialize the component
         rb = GetComponent<Rigidbody>();
-        start = transform.position;
-        //health = 3; 
     }
-    
+
+
     void Update()
     {
+
         HorizontalMovementHandler();
+        LateralMovementHandler();
         BaseJumpHandler();
         JumpBoostHandler();
-        
+
     }
-    
+
     void HorizontalMovementHandler()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal") * speed;  
+        //horizontal movement
+        float moveHorizontal = Input.GetAxis("Horizontal") * speed;
         transform.position += new Vector3(moveHorizontal, 0, 0) * Time.deltaTime;
-        if (start != transform.position)
-        {
-            move.SetBool("IsWalking", true);
-            start = transform.position;
-        }
-        else
-        {
-            move.SetBool("IsWalking", false);
-        }
+    }
+
+    void LateralMovementHandler()
+    {
+        float moveLaterally = Input.GetAxis("Vertical") * speed;
+        transform.position += new Vector3(0, 0, moveLaterally) * Time.deltaTime;
     }
     
     void BaseJumpHandler()
@@ -54,35 +62,31 @@ public class MovementsController : MonoBehaviour
         {
             rb.AddForce(new Vector3(0, jumpForce), ForceMode.Impulse);
             isGrounded = false;
-            move.SetBool("IsJumping", true);
         }
     }
-    
+
     void JumpBoostHandler()
     {
-        if (Time.time > JumpboostEndTime) 
+        if (Time.time > JumpboostEndTime)
         {
             jumpForce = normalJumpForce; // jumpForce set back to normal
         }
     }
-    public void ActivateJumpBoost(float boost, float duration)
-    {
-        jumpForce = boost; 
-        // when activated, duration will add a boost to Time.time - eventually
-        // Time.time will catch up and set jumpForce back to normalJumpForce as showcase above
-        JumpboostEndTime = Time.time + duration; 
-    }
     
-    // Detect collision with the ground
-    void OnCollisionEnter3D(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Ground")  
+        //I am ascending
+        if (collision.gameObject.CompareTag("Ground")) // rider suggesting "CompareTag" 
         {
-            isGrounded = true;
-            move.SetBool("IsJumping", false);
+            isGrounded = true;  
         }
     }
-    
-}
+    public void ActivateJumpBoost(float boost, float duration)
+    {
+        jumpForce = boost;
+        // when activated, duration will add a boost to Time.time - eventually
+        // Time.time will catch up and set jumpForce back to normalJumpForce as showcase above
+        JumpboostEndTime = Time.time + duration;
+    }
 
-//---------------------------------------
+}

@@ -12,7 +12,7 @@ public class WindPower : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                MovementsController movementsController = collision.gameObject.GetComponent<MovementsController>();
+                Movement movementsController = collision.gameObject.GetComponent<Movement>();
                 if (movementsController != null)
                 {
                     Debug.Log("Jump activated");

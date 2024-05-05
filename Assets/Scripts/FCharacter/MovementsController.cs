@@ -14,13 +14,13 @@ public class MovementsController : MonoBehaviour
     //---------------------------
     private bool isGrounded = true;
     //---------------------------
-    private Rigidbody2D rb;
+    private Rigidbody rb;
     //---------------------------
     [SerializeField] private Animator move;
     void Start()
     {
         //initialize the component
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         start = transform.position;
         //health = 3; 
     }
@@ -46,15 +46,13 @@ public class MovementsController : MonoBehaviour
         {
             move.SetBool("IsWalking", false);
         }
-
-        
     }
     
     void BaseJumpHandler()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(new Vector3(0, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector3(0, jumpForce), ForceMode.Impulse);
             isGrounded = false;
             move.SetBool("IsJumping", true);
         }
@@ -76,7 +74,7 @@ public class MovementsController : MonoBehaviour
     }
     
     // Detect collision with the ground
-    void OnCollisionEnter3D(Collision2D collision)
+    void OnCollisionEnter3D(Collision collision)
     {
         if (collision.collider.tag == "Ground")  
         {

@@ -43,7 +43,8 @@ public class enemycontroller : MonoBehaviour
     {
         GroundCheck();
         wallCheck();
-        if (canseeplayer(Dr) == false)
+        canseeplayer();
+        if (!SeePlayer)
         {
             patrol();
         }
@@ -175,7 +176,7 @@ public class enemycontroller : MonoBehaviour
 
     }
 
-    private void canseeplayer(float distance)
+    private void canseeplayer()
     {
         Physics.Raycast(Gd.position, Gd.forward, out RaycastHit hit);
         if (hit.collider != null)

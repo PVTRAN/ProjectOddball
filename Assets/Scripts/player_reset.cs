@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class player_reset : MonoBehaviour
 {
     [SerializeField] private Vector3 SpawnPoint;
+    [SerializeField] private GameObject GameWin;
+    [SerializeField] private TextMeshProUGUI time;
+    
     //called before start
     void Awake()
     {
@@ -17,7 +21,7 @@ public class player_reset : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.name == "Respawn")
         {
@@ -27,6 +31,17 @@ public class player_reset : MonoBehaviour
         {
             SpawnPoint = transform.position;
             collision.enabled = false;
+        }
+        if(collision.gameObject.name == "GameWin")
+        {
+            GameWin.SetActive(true);
+            time.text = $"{TimeManager.Hour:00}:{TimeManager.Minute:00}";
+            if (GameWin.activeSelf == true)
+            {
+                
+                 Time.timeScale = 0f;
+
+            }
         }
     }
 }
